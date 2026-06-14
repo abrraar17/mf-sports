@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: 'Gallery | MF Sports Injury Rehab',

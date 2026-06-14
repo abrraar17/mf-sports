@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Services | MF Sports Injury Rehab',
   description: 'Explore our full range of sports injury and remedial therapy services in Yagoona, Sydney.',

@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'About Us | MF Sports Injury Rehab',
   description: 'Meet the team at MF Sports Injury Rehab — expert sports therapists in Yagoona, Sydney.',

@@ -6,6 +6,7 @@ import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 export async function generateMetadata({ params }) {
   const { data: service } = await supabase
     .from('services')

@@ -5,6 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import { Phone, Mail, MapPin, Clock, Car } from 'lucide-react';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Contact Us | MF Sports Injury Rehab',
   description: 'Get in touch with MF Sports Injury Rehab in Yagoona, Sydney. Call, email or send us a message.',
