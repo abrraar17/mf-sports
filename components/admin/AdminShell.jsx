@@ -40,9 +40,9 @@ export default function AdminShell({ children }) {
   };
 
   return (
-    <div className="min-h-screen flex bg-navy">
+   <div className="min-h-screen flex" style={{backgroundColor: '#0D0D0D', color: '#F1F5F9'}}>
       {/* Sidebar */}
-      <aside className="w-64 bg-navy-light border-r border-white/5 flex flex-col">
+      <aside className="w-64 border-r border-white/5 flex flex-col" style={{backgroundColor: '#1A1A1A'}}>
         <div className="p-6 border-b border-white/5">
           <p className="text-white font-bold">MF Sports Admin</p>
           <p className="text-slate-500 text-xs mt-1">Content Management</p>
