@@ -8,14 +8,14 @@ module.exports = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: '#0D0D0D',
-          light: '#1A1A1A',
-          deep: '#000000',
+          DEFAULT: '#FFFFFF',
+          light: '#F5F5F5',
+          deep: '#EFEFEF',
         },
         accent: {
           DEFAULT: '#CC0000',
           dark: '#AA0000',
-          light: '#FF1A1A',
+          light: '#FF2222',
         },
       },
       fontFamily: {
