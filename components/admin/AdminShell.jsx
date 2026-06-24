@@ -4,17 +4,8 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabaseClient';
 import {
-  LayoutDashboard,
-  Home,
-  User,
-  Wrench,
-  ClipboardList,
-  Star,
-  Image as ImageIcon,
-  ShieldCheck,
-  Phone,
-  Inbox,
-  LogOut,
+  LayoutDashboard, Home, User, Wrench, ClipboardList,
+  Star, Image as ImageIcon, ShieldCheck, Phone, Inbox, LogOut,
 } from 'lucide-react';
 
 const NAV = [
@@ -40,12 +31,12 @@ export default function AdminShell({ children }) {
   };
 
   return (
-   <div className="min-h-screen flex" style={{backgroundColor: '#0D0D0D', color: '#F1F5F9'}}>
+    <div className="min-h-screen flex" style={{ backgroundColor: '#111111', color: '#F1F5F9' }}>
       {/* Sidebar */}
-      <aside className="w-64 border-r border-white/5 flex flex-col" style={{backgroundColor: '#1A1A1A'}}>
-        <div className="p-6 border-b border-white/5">
-          <p className="text-white font-bold">MF Sports Admin</p>
-          <p className="text-slate-500 text-xs mt-1">Content Management</p>
+      <aside className="w-64 flex flex-col flex-shrink-0" style={{ backgroundColor: '#1A1A1A', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="p-6" style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+          <p className="font-bold text-white">MF Sports Admin</p>
+          <p className="text-xs mt-1" style={{ color: '#64748B' }}>Content Management</p>
         </div>
 
         <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
@@ -53,15 +44,14 @@ export default function AdminShell({ children }) {
             const Icon = item.icon;
             const active = pathname === item.href;
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                  active
-                    ? 'bg-accent/10 text-accent'
-                    : 'text-slate-400 hover:text-white hover:bg-white/5'
-                }`}
-              >
+              <Link key={item.href} href={item.href}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '12px',
+                  padding: '10px 16px', borderRadius: '8px', fontSize: '14px',
+                  fontWeight: '500', textDecoration: 'none',
+                  backgroundColor: active ? 'rgba(204,0,0,0.15)' : 'transparent',
+                  color: active ? '#CC0000' : '#94A3B8',
+                }}>
                 <Icon size={18} />
                 {item.label}
               </Link>
@@ -69,11 +59,14 @@ export default function AdminShell({ children }) {
           })}
         </nav>
 
-        <div className="p-4 border-t border-white/5">
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-slate-400 hover:text-red-400 hover:bg-white/5 transition-colors w-full"
-          >
+        <div className="p-4" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+          <button onClick={handleLogout}
+            style={{
+              display: 'flex', alignItems: 'center', gap: '12px',
+              padding: '10px 16px', borderRadius: '8px', fontSize: '14px',
+              fontWeight: '500', color: '#F87171', background: 'none',
+              border: 'none', cursor: 'pointer', width: '100%',
+            }}>
             <LogOut size={18} />
             Logout
           </button>
@@ -81,7 +74,9 @@ export default function AdminShell({ children }) {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 p-8 overflow-y-auto text-white">{children}</main>
+      <main className="flex-1 p-8 overflow-y-auto" style={{ color: '#F1F5F9' }}>
+        {children}
+      </main>
     </div>
   );
 }
